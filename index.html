@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <title>TAI_VU Demo Spin Wheel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script type="text/javascript" src="./libary/Winwheel.js"></script>
+    <script src="./libary/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="my-24 t-center fw-800">Demo Spin Wheel</h1>
+        <div class="cash m-auto">
+          <div class="your-cash">
+            <span id="cash">0</span>
+            <span>K</span>
+          </div>
+        </div>
+        <div>
+          <div class="content">
+            <canvas
+              id="spin-wheel-1"
+              width="175"
+              height="175"
+              style="position: absolute; z-index: 3;"
+            >
+            </canvas>
+            <canvas
+              id="spin-wheel-2"
+              width="255"
+              height="255"
+              style="position: absolute; z-index: 2;"
+            >
+            </canvas>
+            <canvas
+              id="spin-wheel-3"
+              width="325"
+              height="325"
+              style="position: absolute;"
+            >
+            </canvas>
+            <div class="img-center">
+              <img class="img1" src="./images/center.png" onClick="startSpin();" />
+              <img class="img2" src="./images/pointer.png" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div class="m-auto w-500">
+              <h5>Chọn Mức Cược:</h5>
+              <div class="row">
+                <div class="col-lg-3">
+                  <button type="button" id="btn-5" class="btn btn-primary w-150 active" onclick="onChangeBet(5, 'btn-5');" value="5">5K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-10" class="btn btn-primary w-150" onclick="onChangeBet(10, 'btn-10');" value="10">10K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-20" class="btn btn-primary w-150" onclick="onChangeBet(20, 'btn-20');" value="20">20K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-50" class="btn btn-primary w-150" onclick="onChangeBet(50, 'btn-50');" value="50">50K</button>
+                </div>
+              </div>
+              <div class="row mt-24">
+                <div class="col-lg-3">
+                  <button type="button" id="btn-100" class="btn btn-primary w-150" onclick="onChangeBet(100, 'btn-100');" value="100">100K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-200" class="btn btn-primary w-150" onclick="onChangeBet(200, 'btn-200');" value="200">200K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-500" class="btn btn-primary w-150" onclick="onChangeBet(500, 'btn-500');" value="500">500K</button>
+                </div>
+                <div class="col-lg-3">
+                  <button type="button" id="btn-1000" class="btn btn-primary w-150" onclick="onChangeBet(1000, 'btn-1000');" value="1000">1000K</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h1 class="my-24 t-center fw-800">Configuration</h1>
+        <div class="mb-24">
+          <h5>Vòng 1:</h5>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="dropdown1">Next</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li onclick="onChangeV1(0, 'Next');"><a href="#">Next</a></li>
+              <li onclick="onChangeV1(2, 'x0');"><a href="#">x0</a></li>
+              <li onclick="onChangeV1(1, 'x0.5');"><a href="#">x0.5</a></li>
+              <li onclick="onChangeV1(3, 'x1');"><a href="#">x1</a></li>
+              <li onclick="onChangeV1(4, 'x1.5');"><a href="#">x1.5</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-24">
+          <h5>Vòng 2:</h5>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" id="dropdownbtn2"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="dropdown2">Next</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li onclick="onChangeV2(2, 'Next');"><a href="#">Next</a></li>
+              <li onclick="onChangeV2(0, 'x0');"><a href="#">x0</a></li>
+              <li onclick="onChangeV2(3, 'x1.5');"><a href="#">x1.5</a></li>
+              <li onclick="onChangeV2(1, 'x2');"><a href="#">x2</a></li>
+              <li onclick="onChangeV2(6, 'x5');"><a href="#">x5</a></li>
+              <li onclick="onChangeV2(4, 'x7');"><a href="#">x7</a></li>
+            </ul>
+          </div>
+        </div>
+        <h5>Vòng 3:</h5>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" id="dropdownbtn3"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="dropdown3">x5</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li onclick="onChangeV3(0, 'x0');"><a href="#">x0</a></li>
+              <li onclick="onChangeV3(1, 'x2');"><a href="#">x2</a></li>
+              <li onclick="onChangeV3(5, 'x3');"><a href="#">x3</a></li>
+              <li onclick="onChangeV3(2, 'x5');"><a href="#">x5</a></li>
+              <li onclick="onChangeV3(6, 'x7');"><a href="#">x7</a></li>
+              <li onclick="onChangeV3(3, 'x9');"><a href="#">x9</a></li>
+              <li onclick="onChangeV3(12, 'x20');"><a href="#">x20</a></li>
+              <li onclick="onChangeV3(4, 'Nổ Hủ');"><a href="#">Nỗ Hủ</a></li>
+            </ul>
+          </div>
+        </div>
+      <div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

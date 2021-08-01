@@ -1,0 +1,136 @@
+body {
+    font-family: Roboto;
+}
+.container {
+    align-items: center;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    height: 400px;
+}
+.cash {
+    background-color: #B616B9;
+    width: fit-content;
+    border-radius: 50px;
+    padding: 4px 48px;
+    font-size: 12px;
+    color: #bdbdbd;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cash .your-cash {
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.img-center {
+    position: absolute;
+    z-index: 5;
+}
+.img-center .img1 {
+    z-index: 6;
+}
+.img-center .img2 {
+    position: absolute;
+    left: 48px;
+    right: 50%;
+    height: 20px;
+}
+
+.group-input {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: #4a148c;
+    border-radius: 25px;
+    padding: 8px;
+}
+
+.group-input .btn {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: #ba68c8;
+    color: #e0e0e0;
+    font-size: 40px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    place-content: center;
+    cursor: pointer;
+}
+
+.group-input .your-bet {
+    margin: auto 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #e0e0e0;
+}
+
+.group-input .your-bet .value-bet {
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+canvas.active {
+    opacity: 1;
+}
+
+.my-24 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.m-auto {
+    margin: 0 auto;
+}
+
+.w-150 {
+    width: 100%;
+    background-color: #2B3445 !important;
+    border-color: #2B3445 !important;
+    border-radius: 25px !important;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.w-500 {
+    width: 425px;
+}
+
+.btn.active {
+    background-color: #256BEE !important;
+    border-color: #256BEE !important;
+}
+
+.btn:focus {
+    outline: none !important;
+}
+
+.read-only {
+    pointer-events: none !important;
+    background: #bdbdbd !important;
+}
+
